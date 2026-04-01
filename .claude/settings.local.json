@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(echo::create placeholder:*)",
+      "Bash(npm run:*)",
+      "Bash(rm:*)",
+      "Bash(ls:*)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(curl -s http://localhost:3000)",
+      "Bash(curl -I http://localhost:3000)",
+      "Bash(pkill -f \"node\")",
+      "Bash(taskkill //PID 4964 //F)",
+      "Bash(pkill -f node)",
+      "Bash(curl -s -o /dev/null -w \"%{http_code}\" http://localhost:3000)"
+    ]
+  }
+}

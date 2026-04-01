@@ -1,0 +1,15 @@
+<svg width="600" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg2" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f0fdf4"/>
+      <stop offset="100%" style="stop-color:#dcfce7"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="800" fill="url(#bg2)"/>
+  <polygon points="300,100 500,450 100,450" fill="#22c55e" opacity="0.3"/>
+  <polygon points="300,150 480,500 120,500" fill="#16a34a" opacity="0.25"/>
+  <rect x="220" y="500" width="160" height="200" rx="10" fill="#4ade80" opacity="0.2"/>
+  <circle cx="300" cy="380" r="60" fill="#86efac" opacity="0.5"/>
+  <path d="M 150 700 Q 300 550 450 700" stroke="#22c55e" stroke-width="3" fill="none" opacity="0.3"/>
+  <text x="300" y="760" font-family="Georgia, serif" font-size="32" fill="#166534" text-anchor="middle" opacity="0.6" font-weight="bold">Forest Romance</text>
+</svg>

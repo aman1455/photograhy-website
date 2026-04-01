@@ -1,0 +1,20 @@
+<svg width="600" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="lounge" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#faf5ff"/>
+      <stop offset="100%" style="stop-color:#f3e8ff"/>
+    </linearGradient>
+    <linearGradient id="pool" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#1d4ed8"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="600" fill="url(#lounge)"/>
+  <ellipse cx="300" cy="350" rx="200" ry="120" fill="url(#pool)" opacity="0.4"/>
+  <rect x="200" y="280" width="200" height="140" rx="70" fill="#60a5fa" opacity="0.3"/>
+  <circle cx="250" cy="320" r="30" fill="#93c5fd" opacity="0.5"/>
+  <circle cx="350" cy="340" r="25" fill="#bfdbfe" opacity="0.5"/>
+  <rect x="100" y="480" width="400" height="80" rx="10" fill="#d8b4fe" opacity="0.4"/>
+  <path d="M 150 500 L 250 480 L 350 500 L 450 480" stroke="#a855f7" stroke-width="2" fill="none" opacity="0.5"/>
+  <text x="300" y="560" font-family="Georgia, serif" font-size="26" fill="#6b21a8" text-anchor="middle" opacity="0.7" font-weight="bold">Spa & Lounge</text>
+</svg>
