@@ -57,7 +57,7 @@ export default function Packages() {
             💝 Packages
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-            Choose Your Perfect Package
+            Pre-Wedding Packages with Hotel Stay in Rishikesh
           </h2>
           <p className="text-sm sm:text-lg text-gray-600 max-w-2xl mx-auto px-2">
             Transparent pricing. No hidden charges. All packages include professional photographer, editing, and taxes.

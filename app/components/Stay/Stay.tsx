@@ -9,7 +9,7 @@ export default function Stay() {
             🏨 accommodations
           </span>
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-            Your Comfort is Our Priority
+            Stay in Rishikesh — Comfort After Your Shoot
           </h2>
           <p className="text-sm sm:text-lg text-gray-600 max-w-2xl mx-auto px-2">
             Relax in carefully selected hotels after your shoot. Experience comfort with stunning mountain views.
@@ -145,6 +145,27 @@ export default function Stay() {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+        {/* Nearby Attractions */}
+        <div className="mt-12 sm:mt-16">
+          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 text-center mb-6">
+            Nearby Attractions in Rishikesh
+          </h3>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+            {[
+              { icon: "🌊", name: "Laxman Jhula" },
+              { icon: "🙏", name: "Triveni Ghat" },
+              { icon: "🏔️", name: "Neelkanth Temple" },
+              { icon: "🌿", name: "Rajaji Forest" },
+              { icon: "🎵", name: "Beatles Ashram" },
+              { icon: "❄️", name: "Dhanaulti" },
+            ].map((place) => (
+              <div key={place.name} className="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+                <div className="text-2xl mb-2">{place.icon}</div>
+                <p className="text-xs sm:text-sm font-semibold text-gray-700">{place.name}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>

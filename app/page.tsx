@@ -1,7 +1,10 @@
+import Header from "./components/Header";
 import Hero from "./components/Hero/Hero";
 import Portfolio from "./components/Portfolio/Portfolio";
 import Packages from "./components/Packages/Packages";
 import Stay from "./components/Stay/Stay";
+import About from "./components/About/About";
+import FAQ from "./components/FAQ/FAQ";
 import Testimonials from "./components/Testimonials/Testimonials";
 import CTA from "./components/CTA/CTA";
 import WhatsAppButton from "./components/WhatsAppButton";
@@ -9,6 +12,8 @@ import WhatsAppButton from "./components/WhatsAppButton";
 export default function Home() {
   return (
     <main className="min-h-screen flex-1 flex flex-col">
+      <Header />
+
       {/* Hero Section */}
       <Hero />
 
@@ -21,8 +26,14 @@ export default function Home() {
       {/* Stay Section */}
       <Stay />
 
+      {/* About Section */}
+      <About />
+
       {/* Testimonials Section */}
       <Testimonials />
+
+      {/* FAQ Section */}
+      <FAQ />
 
       {/* Final CTA Section */}
       <CTA />
@@ -37,12 +48,32 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-8 px-4 pb-20 sm:pb-24">
-        <div className="max-w-6xl mx-auto text-center">
-          <p className="text-sm sm:text-base mb-2">
-            Pre Wedding Shoot in Rishikesh & Dhanaulti
+        <div className="max-w-6xl mx-auto text-center space-y-2">
+          <p className="text-sm sm:text-base font-semibold">
+            Rishikesh Pre Wedding Photography
           </p>
           <p className="text-xs sm:text-sm text-gray-400">
-            © {new Date().getFullYear()} All rights reserved.
+            Rishikesh, Uttarakhand, India
+          </p>
+          <p className="text-xs sm:text-sm text-gray-400">
+            📞{" "}
+            <a href="tel:+919286949730" className="hover:text-white transition-colors">
+              +91 92869 49730
+            </a>
+          </p>
+          <p className="text-xs sm:text-sm text-gray-400">
+            📸{" "}
+            <a
+              href="https://www.instagram.com/rishikeshprewedding"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-pink-400 transition-colors"
+            >
+              @rishikeshprewedding
+            </a>
+          </p>
+          <p className="text-xs sm:text-sm text-gray-500 pt-2">
+            © {new Date().getFullYear()} Rishikesh Pre Wedding Photography. All rights reserved.
           </p>
         </div>
       </footer>

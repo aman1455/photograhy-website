@@ -1,14 +1,14 @@
 import Image from "next/image";
 
 const portfolioImages = [
-  { id: 1, src: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=600&h=800&q=80", alt: "Couple hiking in mountains" },
-  { id: 2, src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&h=800&q=80", alt: "Romantic couple embrace" },
-  { id: 3, src: "https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=600&h=800&q=80", alt: "Couple kissing with mountain view" },
-  { id: 4, src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&h=800&q=80", alt: "Couple in forest" },
-  { id: 5, src: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&h=800&q=80", alt: "Couple by river" },
-  { id: 6, src: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=600&h=800&q=80", alt: "Couple in garden" },
-  { id: 7, src: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&h=800&q=80", alt: "Couple on street" },
-  { id: 8, src: "https://images.unsplash.com/photo-1522630346382-494b36577ac4?auto=format&fit=crop&w=600&h=800&q=80", alt: "Couple romantic moment" },
+  { id: 1, src: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=600&h=800&q=80", alt: "Pre-wedding couple shoot at Laxman Jhula Rishikesh" },
+  { id: 2, src: "https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&h=800&q=80", alt: "Romantic pre-wedding photography near Ganges Rishikesh" },
+  { id: 3, src: "https://images.unsplash.com/photo-1529636798458-92182e662485?auto=format&fit=crop&w=600&h=800&q=80", alt: "Pre-wedding shoot with Himalayan mountain backdrop Rishikesh" },
+  { id: 4, src: "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?auto=format&fit=crop&w=600&h=800&q=80", alt: "Couple pre-wedding photography in Rajaji Forest Rishikesh" },
+  { id: 5, src: "https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?auto=format&fit=crop&w=600&h=800&q=80", alt: "Pre-wedding shoot by the Ganges river Rishikesh Uttarakhand" },
+  { id: 6, src: "https://images.unsplash.com/photo-1465495976277-4387d4b0b4c6?auto=format&fit=crop&w=600&h=800&q=80", alt: "Pre-wedding photography at Triveni Ghat Rishikesh" },
+  { id: 7, src: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?auto=format&fit=crop&w=600&h=800&q=80", alt: "Cinematic pre-wedding shoot Dhanaulti Uttarakhand" },
+  { id: 8, src: "https://images.unsplash.com/photo-1522630346382-494b36577ac4?auto=format&fit=crop&w=600&h=800&q=80", alt: "Pre-wedding couple portrait near Neelkanth Temple Rishikesh" },
 ];
 
 export default function Portfolio() {
@@ -17,10 +17,10 @@ export default function Portfolio() {
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-8 sm:mb-12">
           <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-            Our Work
+            Pre-Wedding Photography Portfolio — Rishikesh & Dhanaulti
           </h2>
           <p className="text-base sm:text-lg text-gray-600 px-4">
-            Capturing love stories in the Himalayas
+            Capturing love stories in the Himalayas — Laxman Jhula, Ganges, Rajaji Forest & more
           </p>
         </div>
 

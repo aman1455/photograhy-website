@@ -6,7 +6,7 @@ export default function WhatsAppButton({
   message = "I want pre-wedding details",
   className = ""
 }: WhatsAppButtonProps) {
-  const phoneNumber = "91XXXXXXXXXX"; // Replace with your WhatsApp number
+  const phoneNumber = "919286949730";
 
   const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
 
