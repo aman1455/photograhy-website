@@ -1,5 +1,7 @@
 import { Package } from "@/types";
 import WhatsAppButton from "../WhatsAppButton";
+import Reveal from "../Reveal";
+import StaggerGrid from "../StaggerGrid";
 
 const packages: Package[] = [
   {
@@ -52,22 +54,25 @@ export default function Packages() {
   return (
     <section className="py-16 sm:py-24 px-4 bg-gradient-premium" id="packages">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-10 sm:mb-16">
-          <span className="inline-block px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold mb-3 sm:mb-4">
-            💝 Packages
-          </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-            Pre-Wedding Packages with Hotel Stay in Rishikesh
-          </h2>
-          <p className="text-sm sm:text-lg text-gray-600 max-w-2xl mx-auto px-2">
-            Transparent pricing. No hidden charges. All packages include professional photographer, editing, and taxes.
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center mb-10 sm:mb-16">
+            <span className="inline-block px-4 py-2 bg-purple-100 text-purple-700 rounded-full text-sm font-semibold mb-3 sm:mb-4">
+              💝 Packages
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+              Pre-Wedding Packages with Hotel Stay in Rishikesh
+            </h2>
+            <p className="text-sm sm:text-lg text-gray-600 max-w-2xl mx-auto px-2">
+              Transparent pricing. No hidden charges. All packages include professional photographer, editing, and taxes.
+            </p>
+          </div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 sm:gap-8">
-          {packages.map((pkg) => (
+        <StaggerGrid className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 sm:gap-8">
+          {packages.map((pkg, i) => (
             <div
               key={pkg.name}
+              style={{ '--stagger': i } as React.CSSProperties}
               className={`relative rounded-2xl p-5 sm:p-6 md:p-8 shadow-card card-lift transition-all duration-300 ${
                 pkg.popular
                   ? "bg-gradient-to-br from-fuchsia-500 via-purple-600 to-violet-600 text-white ring-4 ring-purple-300 scale-[1.02] md:scale-105 z-10"
@@ -139,14 +144,16 @@ export default function Packages() {
               )}
             </div>
           ))}
-        </div>
+        </StaggerGrid>
 
         {/* Trust message */}
-        <div className="mt-10 sm:mt-16 text-center">
-          <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto px-4">
-            💳 Flexible payment options available | 🔄 50% advance, rest on shoot day
-          </p>
-        </div>
+        <Reveal delay={100}>
+          <div className="mt-10 sm:mt-16 text-center">
+            <p className="text-sm sm:text-base text-gray-600 max-w-2xl mx-auto px-4">
+              💳 Flexible payment options available | 🔄 50% advance, rest on shoot day
+            </p>
+          </div>
+        </Reveal>
       </div>
     </section>
   );

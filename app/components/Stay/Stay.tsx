@@ -1,25 +1,32 @@
 import Image from "next/image";
+import Reveal from "../Reveal";
+import StaggerGrid from "../StaggerGrid";
 
 export default function Stay() {
   return (
     <section className="py-16 sm:py-24 px-4 bg-gradient-premium" id="stay">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-10 sm:mb-16">
-          <span className="inline-block px-4 py-2 bg-pink-100 text-pink-700 rounded-full text-sm font-semibold mb-3 sm:mb-4">
-            🏨 accommodations
-          </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-            Stay in Rishikesh — Comfort After Your Shoot
-          </h2>
-          <p className="text-sm sm:text-lg text-gray-600 max-w-2xl mx-auto px-2">
-            Relax in carefully selected hotels after your shoot. Experience comfort with stunning mountain views.
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center mb-10 sm:mb-16">
+            <span className="inline-block px-4 py-2 bg-pink-100 text-pink-700 rounded-full text-sm font-semibold mb-3 sm:mb-4">
+              🏨 accommodations
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+              Stay in Rishikesh — Comfort After Your Shoot
+            </h2>
+            <p className="text-sm sm:text-lg text-gray-600 max-w-2xl mx-auto px-2">
+              Relax in carefully selected hotels after your shoot. Experience comfort with stunning mountain views.
+            </p>
+          </div>
+        </Reveal>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Hotel Images Gallery */}
-          <div className="grid grid-cols-2 gap-2 sm:gap-4 auto-rows-fr">
-            <div className="relative aspect-square rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+          <StaggerGrid className="grid grid-cols-2 gap-2 sm:gap-4 auto-rows-fr">
+            <div
+              style={{ '--stagger': 0 } as React.CSSProperties}
+              className="relative aspect-square rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group"
+            >
               <Image
                 src="https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=600&h=600&q=80"
                 alt="Luxury hotel room"
@@ -31,7 +38,10 @@ export default function Stay() {
                 <p className="text-white font-semibold p-4 text-sm">Premium Room</p>
               </div>
             </div>
-            <div className="relative aspect-square rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+            <div
+              style={{ '--stagger': 1 } as React.CSSProperties}
+              className="relative aspect-square rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group"
+            >
               <Image
                 src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&h=600&q=80"
                 alt="Resort exterior"
@@ -43,7 +53,10 @@ export default function Stay() {
                 <p className="text-white font-semibold p-4 text-sm">Resort Exterior</p>
               </div>
             </div>
-            <div className="relative aspect-square rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+            <div
+              style={{ '--stagger': 2 } as React.CSSProperties}
+              className="relative aspect-square rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group"
+            >
               <Image
                 src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=600&h=600&q=80"
                 alt="Mountain view room"
@@ -55,7 +68,10 @@ export default function Stay() {
                 <p className="text-white font-semibold p-4 text-sm">Mountain View</p>
               </div>
             </div>
-            <div className="relative aspect-square rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group">
+            <div
+              style={{ '--stagger': 3 } as React.CSSProperties}
+              className="relative aspect-square rounded-2xl overflow-hidden shadow-xl hover:shadow-2xl transition-all duration-300 group"
+            >
               <Image
                 src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=600&h=600&q=80"
                 alt="Spa and lounge"
@@ -67,9 +83,10 @@ export default function Stay() {
                 <p className="text-white font-semibold p-4 text-sm">Lounge Area</p>
               </div>
             </div>
-          </div>
+          </StaggerGrid>
 
           {/* Features */}
+          <Reveal delay={100}>
           <div className="lg:pl-4">
             <div className="inline-flex items-center gap-2 text-purple-600 font-semibold mb-4 sm:mb-6">
               <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
@@ -146,13 +163,15 @@ export default function Stay() {
               </div>
             </div>
           </div>
+          </Reveal>
         </div>
         {/* Nearby Attractions */}
+        <Reveal delay={100}>
         <div className="mt-12 sm:mt-16">
           <h3 className="text-xl sm:text-2xl font-bold text-gray-900 text-center mb-6">
             Nearby Attractions in Rishikesh
           </h3>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
+          <StaggerGrid className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-6 gap-3">
             {[
               { icon: "🌊", name: "Laxman Jhula" },
               { icon: "🙏", name: "Triveni Ghat" },
@@ -160,14 +179,19 @@ export default function Stay() {
               { icon: "🌿", name: "Rajaji Forest" },
               { icon: "🎵", name: "Beatles Ashram" },
               { icon: "❄️", name: "Dhanaulti" },
-            ].map((place) => (
-              <div key={place.name} className="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow">
+            ].map((place, i) => (
+              <div
+                key={place.name}
+                style={{ '--stagger': i } as React.CSSProperties}
+                className="bg-white rounded-2xl p-4 text-center shadow-sm border border-gray-100 hover:shadow-md transition-shadow"
+              >
                 <div className="text-2xl mb-2">{place.icon}</div>
                 <p className="text-xs sm:text-sm font-semibold text-gray-700">{place.name}</p>
               </div>
             ))}
-          </div>
+          </StaggerGrid>
         </div>
+        </Reveal>
       </div>
     </section>
   );

@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Reveal from "../Reveal";
+import StaggerGrid from "../StaggerGrid";
 
 const portfolioImages = [
   { id: 1, src: "https://images.unsplash.com/photo-1516467508483-a7212febe31a?auto=format&fit=crop&w=600&h=800&q=80", alt: "Pre-wedding couple shoot at Laxman Jhula Rishikesh" },
@@ -15,20 +17,23 @@ export default function Portfolio() {
   return (
     <section className="py-20 px-4 bg-white" id="portfolio">
       <div className="max-w-6xl mx-auto">
-        <div className="text-center mb-8 sm:mb-12">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-            Pre-Wedding Photography Portfolio — Rishikesh & Dhanaulti
-          </h2>
-          <p className="text-base sm:text-lg text-gray-600 px-4">
-            Capturing love stories in the Himalayas — Laxman Jhula, Ganges, Rajaji Forest & more
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+              Pre-Wedding Photography Portfolio — Rishikesh & Dhanaulti
+            </h2>
+            <p className="text-base sm:text-lg text-gray-600 px-4">
+              Capturing love stories in the Himalayas — Laxman Jhula, Ganges, Rajaji Forest & more
+            </p>
+          </div>
+        </Reveal>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4">
-          {portfolioImages.map((image) => (
+        <StaggerGrid className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-4">
+          {portfolioImages.map((image, i) => (
             <div
               key={image.id}
+              style={{ '--stagger': i } as React.CSSProperties}
               className="relative aspect-[3/4] rounded-lg overflow-hidden shadow-md hover:shadow-xl transition-shadow"
             >
               <Image
@@ -40,9 +45,10 @@ export default function Portfolio() {
               />
             </div>
           ))}
-        </div>
+        </StaggerGrid>
 
         {/* Optional Video Section */}
+        <Reveal delay={150}>
         <div className="mt-10 sm:mt-16 text-center px-4">
           <h3 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-4 sm:mb-6">
             Watch Our Cinematic Work
@@ -68,6 +74,7 @@ export default function Portfolio() {
             </div>
           </div>
         </div>
+        </Reveal>
       </div>
     </section>
   );

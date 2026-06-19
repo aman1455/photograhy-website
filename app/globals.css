@@ -89,14 +89,29 @@ html {
     min-height: 44px;
     min-width: 44px;
   }
+}
 
-  /* Reduce motion for accessibility */
-  @media (prefers-reduced-motion: reduce) {
-    * {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-    }
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .hero-content > *,
+  .stagger-grid > *,
+  .animate-fade-in-up,
+  .animate-fade-in,
+  .animate-scale-in,
+  .hero-blob {
+    animation: none !important;
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
   }
 }
 
@@ -116,4 +131,118 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: linear-gradient(180deg, #7c3aed 0%, #a855f7 100%);
+}
+
+/* ============================================
+   Performance: skip off-screen section rendering
+   ============================================ */
+main > section {
+  content-visibility: auto;
+  contain-intrinsic-size: 500px;
+  transform: translateZ(0);
+}
+
+/* ============================================
+   Scroll-Triggered Reveal Animations
+   GPU-composited (opacity + transform only)
+   ============================================ */
+
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes scale-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-fade-in-up {
+  will-change: transform, opacity;
+  animation: fade-in-up 0.7s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+.animate-fade-in {
+  will-change: opacity;
+  animation: fade-in 0.6s ease-out both;
+}
+
+.animate-scale-in {
+  will-change: transform, opacity;
+  animation: scale-in 0.6s cubic-bezier(0.4, 0, 0.2, 1) both;
+}
+
+/* Hero staggered load-time entrance */
+.hero-content > * {
+  opacity: 0;
+  animation: fade-in-up 0.7s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+.hero-content > :nth-child(1) { animation-delay: 0.1s; }
+.hero-content > :nth-child(2) { animation-delay: 0.25s; }
+.hero-content > :nth-child(3) { animation-delay: 0.4s; }
+.hero-content > :nth-child(4) { animation-delay: 0.55s; }
+.hero-content > :nth-child(5) { animation-delay: 0.7s; }
+
+/* Hero background blob entrance */
+.hero-blob {
+  animation: blob-fade-in 1.5s ease-out both;
+}
+
+@keyframes blob-fade-in {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+}
+
+/* Stagger grid — children fade in sequentially via --stagger */
+.stagger-grid > * {
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: transform, opacity;
+  transition: opacity 0.4s cubic-bezier(0.4, 0, 0.2, 1), transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: calc(var(--stagger, 0) * 60ms);
+}
+
+.stagger-grid.in-view > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger items within hero-content (trust cards) */
+.hero-content > .stagger-grid > * {
+  animation: none;
+  transition-duration: 0.4s;
+}
+
+/* Image hover zoom enhancement */
+.hover-lift {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.12);
 }

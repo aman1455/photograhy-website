@@ -1,4 +1,6 @@
 import { Testimonial } from "@/types";
+import Reveal from "../Reveal";
+import StaggerGrid from "../StaggerGrid";
 
 const testimonials: Testimonial[] = [
   {
@@ -22,22 +24,25 @@ export default function Testimonials() {
   return (
     <section className="py-16 sm:py-24 px-4 bg-gradient-premium" id="testimonials">
       <div className="max-w-6xl mx-auto px-4">
-        <div className="text-center mb-10 sm:mb-16">
-          <span className="inline-block px-4 py-2 bg-rose-100 text-rose-700 rounded-full text-sm font-semibold mb-3 sm:mb-4">
-            💬 testimonials
-          </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
-            Loved by Couples Across India
-          </h2>
-          <p className="text-sm sm:text-lg text-gray-600 max-w-2xl mx-auto px-2">
-            Don&apos;t just take our word for it. Here&apos;s what newlyweds say about their experience.
-          </p>
-        </div>
+        <Reveal>
+          <div className="text-center mb-10 sm:mb-16">
+            <span className="inline-block px-4 py-2 bg-rose-100 text-rose-700 rounded-full text-sm font-semibold mb-3 sm:mb-4">
+              💬 testimonials
+            </span>
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+              Loved by Couples Across India
+            </h2>
+            <p className="text-sm sm:text-lg text-gray-600 max-w-2xl mx-auto px-2">
+              Don&apos;t just take our word for it. Here&apos;s what newlyweds say about their experience.
+            </p>
+          </div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+        <StaggerGrid className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
           {testimonials.map((testimonial, index) => (
             <div
               key={index}
+              style={{ '--stagger': index } as React.CSSProperties}
               className="bg-white p-5 sm:p-6 rounded-2xl shadow-card hover:shadow-premium transition-all duration-300 card-lift relative overflow-hidden group"
             >
               {/* Decorative gradient top */}
@@ -80,9 +85,10 @@ export default function Testimonials() {
               </div>
             </div>
           ))}
-        </div>
+        </StaggerGrid>
 
         {/* Social Proof */}
+        <Reveal delay={100}>
         <div className="mt-12 sm:mt-16 text-center">
           <div className="inline-flex items-center gap-4 sm:gap-8 bg-white/60 backdrop-blur-sm px-6 py-4 sm:px-8 sm:py-6 rounded-2xl shadow-sm">
             <div className="text-center">
@@ -101,6 +107,7 @@ export default function Testimonials() {
             </div>
           </div>
         </div>
+        </Reveal>
       </div>
     </section>
   );
